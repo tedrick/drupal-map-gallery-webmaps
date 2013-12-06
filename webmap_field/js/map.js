@@ -131,6 +131,8 @@ showWebMap: function(baseUrl, webmapId, extent, title) {
               layerInfos: layerInfo
             }, "esriWebMapLegend" + this._elBaseSuffix);
           legendDijit.startup();
+          //JT - shim
+          shim(response.map);
     }),
 	function(error){
           console.log("Map creation failed: ", dojo.toJson(error));        

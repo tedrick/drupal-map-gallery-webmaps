@@ -1,19 +1,27 @@
+#jtTitle {
+ background-color: #333333;
+  color: #ECF1E3;
+  height: 26px;
+  padding: 7px 3px 15px 10px;
+}
+
 .esriWebMapTitleBar {
   background-color: #333333;
   color: #ECF1E3;
   height: 20px;
-  padding: 7px 3px 15px 10px;
   text-align: left;
 }
 
 .esriWebMapLegend {
-  width:25%;	
+/*  width:25%; */
+width: 0%;	
   height: 500px;
   overflow: auto;
   float: left;
 }
 .esriWebMapField {
-  width: 75%;
+
+  width: 100%;
   height: 500px;
   float: right;
 
@@ -32,4 +40,17 @@
 
 .esriWebMap {
   border: 1px solid #000000;	
+}
+
+/*Geocoder class*/
+#esriWebMapGeocoder {
+	height:100%;
+        width: 260px;
+        float:right;
+        position:relative;
+        top: -20px;
+}
+
+.esriGeocoderResult {
+color:black;
 }

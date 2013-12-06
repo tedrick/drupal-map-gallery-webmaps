@@ -9,7 +9,7 @@ drupal_add_css("//serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/dojo/dijit" .
 	'type' => 'external'
 ));
 
-drupal_add_css("//serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/esri/css/esri.css", 
+drupal_add_css("//serverapi.arcgisonline.com/jsapi/arcgis/3.4/js/esri/css/esri.css", 
 array (
 	'group' => CSS_THEME,
 	'type' => 'external'
@@ -24,7 +24,8 @@ $rand = rand();
 $url = $GLOBALS['base_url'] . '/'.(drupal_get_path('module', 'webmap'));
 drupal_add_js('var esri_webmap_field_url = "'.$url.'"; esriMapGalleryDoDojoConfig();', 'inline', array('group' => JS_LIBRARY, 'weight' => -10));
 drupal_add_js(drupal_get_path('module', 'webmap')."/../common/js/djConfig.js", array('group' => JS_LIBRARY, 'weight' => -5));
-drupal_add_js('http://serverapi.arcgisonline.com/jsapi/arcgis/3.3', 'external', array('group' =>JS_DEFAULT));
+drupal_add_js(drupal_get_path('module', 'webmap').'/js/shim.js', array('group' => JS_LIBRARY, 'weight' => -5));
+drupal_add_js('http://serverapi.arcgisonline.com/jsapi/arcgis/3.4', 'external', array('group' =>JS_DEFAULT));
 ?>
 
 <script type="text/javascript">
@@ -43,9 +44,11 @@ drupal_add_js('http://serverapi.arcgisonline.com/jsapi/arcgis/3.3', 'external', 
 </script>
 
 <div id="esriWebMap<?php print $rand?>" class="esriWebMap claro">
+<div id="jtTitle">
   <div id="esriWebMapTitleBar<?php print $rand?>" class="esriWebMapTitleBar">
   </div>
-  <div>
+    <div id="esriWebMapGeocoder" class="esriWebMapGeocoder"></div>
+</div>
     <div id="esriWebMapLegend<?php print $rand?>" class="claro esriWebMapLegend"></div>
     <div id="esriWebMapField<?php print $rand?>" class="claro esriWebMapField"></div>
   </div>
